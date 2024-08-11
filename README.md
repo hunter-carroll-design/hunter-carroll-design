@@ -1,2 +1,4 @@
-# Weather App based on location
-Eventually will include historical data...
+# Dev Projects
+Lists of Ideas:
+  historical weather app
+  
