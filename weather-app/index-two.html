@@ -9,17 +9,25 @@
 <link rel="stylesheet" href="./style.css">
 
 <body>
+<div class="main">
+  <div class="container">
 
+    <h1>Check your weather</h1>
+  </div>
   <div class="container" id="search-container">
     <input type="text" id="city" placeholder="Enter City">
     <button onclick="getWeather()">Search</button>
   </div>
   <div class="container" id="weather-container">
     <div class="row">
-      <div class="col col-12">
+      <div class="col col-3">
+        <div id="map">
+          
+        </div>
+        <!-- <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d214586.97537240063!2d-96.89635902315243!3d32.82084512496027!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x864c19f77b45974b%3A0xb9ec9ba4f647678f!2sDallas%2C%20TX!5e0!3m2!1sen!2sus!4v1732854957287!5m2!1sen!2sus" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> -->
         <div id="city-info"></div>
       </div>
-      <div class="col col-12">
+      <div class="col col-9">
         <div class="row">
           <div class="col col-6">
             <div id="temp-div"></div>
@@ -33,11 +41,12 @@
       </div>
     </div>
     <div class="col-12">
-      <div id="hourly-forecast"></div>
+      <div id="hourly-forecast" class=""></div>
     </div>
     <img id="weather-icon" alt="Weather Icon">
 
   </div>
+</div>
   <script src="./script-custom.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/js/bootstrap.min.js"></script>

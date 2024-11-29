@@ -32,6 +32,7 @@ function getWeather() {
 }
 
 function displayWeather(data) {
+    const mapDiv = document.getElementById('map');
     const cityInfo = document.getElementById('city-info');
     const tempDivInfo = document.getElementById('temp-div');
     const weatherInfoDiv = document.getElementById('weather-info');
@@ -39,30 +40,42 @@ function displayWeather(data) {
     const hourlyForecastDiv = document.getElementById('hourly-forecast');
 
 
+
     // Clear previous content
+    mapDiv.innerHTML = '';
     cityInfo.innerHTML = '';
-    weatherInfoDiv.innerHTML = '';
-    hourlyForecastDiv.innerHTML = '';
     tempDivInfo.innerHTML = '';
+    weatherInfoDiv.innerHTML = '';
+    weatherIcon.innerHTML = '';
+    hourlyForecastDiv.innerHTML = '';
 
     if (data.cod === '404') {
         weatherInfoDiv.innerHTML = `<p>${data.message}</p>`;
     } else {
         const cityName = data.name;
-        const temperature = Math.round(data.main.temp - 273.15); // Convert to Celsius
+        const celcius = Math.round(data.main.temp - 273.15); // Convert to Celsius
+        const temperature = Math.round(celcius * (9 / 5) + 32);  // Convert to Farenheit
         const description = data.weather[0].description;
-        const windSpeed = data.wind[0].speed;
-        const humidity = data.main[0].humidity;
-
+        const windSpeed = data.wind.speed;
+        const humidity = data.main.humidity;
+        const precipitation = data.main.humidity;
+        const long = data.coord.lon;
+        const lat = data.coord.lat;
         const iconCode = data.weather[0].icon;
         const iconUrl = `https://openweathermap.org/img/wn/${iconCode}@4x.png`;
+       
 
+        const mapHTML = `
+<iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3438.2385053225394!2d${long}!3d${lat}!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMzDCsDI5JzA5LjYiTiA5MMKwMTEnNDIuMCJX!5e0!3m2!1sen!2sus!4v1732914250450!5m2!1sen!2sus" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+
+        `
         const cityHTML = `
         <p>${cityName}</p>
     `;
         const temperatureHTML = `
         <div class="boxes">
-        <p>${temperature}°C</p>
+        <p>${temperature}°F</p>
         </div>
 
     `;
@@ -70,13 +83,15 @@ function displayWeather(data) {
         <div class="boxes">
         <p>${description}</p>
         <p>${windSpeed}</p>
-        <p>${humidity}</p>
+        <p>${humidity}% humidity</p>
+        <p>${precipitation}% humidity</p>
 
         </div>
 
     `;
 
         cityInfo.innerHTML = cityHTML;
+        mapDiv.innerHTML = mapHTML;
         tempDivInfo.innerHTML = temperatureHTML;
         weatherInfoDiv.innerHTML = weatherHtml;
         weatherIcon.src = iconUrl;
@@ -99,10 +114,12 @@ function displayHourlyForecast(hourlyData) {
         const iconUrl = `https://openweathermap.org/img/wn/${iconCode}.png`;
 
         const hourlyItemHtml = `
-        <div class="hourly-item">
-            <span>${hour}:00</span>
-            <img src="${iconUrl}" alt="Hourly Weather Icon">
-            <span>${temperature}°C</span>
+        <div class="boxes">
+            <div class="hourly-item">       
+                <span>${hour}:00</span>
+                <img src="${iconUrl}" alt="Hourly Weather Icon">
+                <span>${temperature}°C</span>
+            </div>
         </div>
     `;
 
