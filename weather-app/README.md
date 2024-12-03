@@ -1,7 +1,8 @@
 <<<<<<< HEAD
-# Dev Projects
-Lists of Ideas:
-  historical weather app
+# Weather app
+This responsive app allows you to check weather based on city using the Open Weather Map API. 
+
+Features a google map embed, temperature (converted to F), wind speed (converted to mph), humidity level percentage, current weather description, and a 24-hour forecast.
   
 =======
 # Weather App based on location
