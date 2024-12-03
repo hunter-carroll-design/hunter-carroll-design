@@ -6,7 +6,6 @@ function getWeather() {
         alert('Please enter a city');
         return;
     }
-    // https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=3e093e59335a6b12910d967d5f859827
     const currentWeatherUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`;
     const forecastUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}`;
 
@@ -38,19 +37,15 @@ function displayWeather(data) {
     const tempDivInfo = document.getElementById('temp-div');
     const iconDiv = document.getElementById('icon-div');
     const weatherInfoDiv = document.getElementById('weather-info');
-    // const weatherIcon = document.getElementById('weather-icon');
     const hourlyForecastDiv = document.getElementById('hourly-forecast');
 
 
 
     // Clear previous content
-    // mapDiv.innerHTML = '';
     navigation.innerHTML = '';
-    // cityInfo.innerHTML = '';
     tempDivInfo.innerHTML = '';
     weatherInfoDiv.innerHTML = '';
     iconDiv.innerHTML = '';
-    // weatherIcon.innerHTML = '';
     hourlyForecastDiv.innerHTML = '';
 
     if (data.cod === '404') {
@@ -103,15 +98,10 @@ function displayWeather(data) {
 
     `;
         navigation.innerHTML = navHTML;
-        // cityInfo.innerHTML = cityHTML;
-        // mapDiv.innerHTML = mapHTML;
         tempDivInfo.innerHTML = temperatureHTML;
         iconDiv.innerHTML = iconHTML;
         weatherInfoDiv.innerHTML = weatherHtml;
-        // weatherIcon.src = iconUrl;
-        // weatherIcon.alt = description;
-
-        // showImage();
+     
     }
 }
 
