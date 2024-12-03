@@ -6,56 +6,99 @@ body {
   justify-content: center;
   height: 100vh;
   margin: 0; */
+  font-family: "Funnel Display", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
 }
-.main{
-  margin-top:2em;
+.main {
+  margin-top: 2em;
 }
-.boxes{
+.row>*{
+  /* --bs-gutter-y:1rem!important;
+  --bs-gutter-x:1rem!important; */
+}
+.row>.col{
+  /* margin-top: 0; */
+}
+
+
+.boxes, #hourly-forecast:has(.hourlyItemHtml) {
   background-color: #ffffff;
   padding: 1em;
   border-radius: 10px;
-}
-#search-container{
-  width: 100%;
- }
-input {
-  /* width: calc(100% - 16px); */
-  width: 80%;
-  padding: 8px;
-  box-sizing: border-box;
-  border-radius: 10px;
-  border: 2px solid #f4cabf;
-  margin-top: 20px;
+  /* height: 100%; */
   margin: .5em;
 }
 
- #search-container button {
+#search-container {
+  width: 100%;
+}
+h3{
+  font-size:3rem!important;
+}
+input {
+  /* width: calc(100% - 16px); */
+  width: 100%;
+  padding: 8px;
+  border: 2px solid #f4cabf;
+  border-radius: 10px;
+  margin-top: 20px;
+  /* margin: .5em; */
+}
+
+#search-container button {
   background: #f4cabf;
   color: rgb(224, 45, 45);
   padding: 10px;
-  margin: .5em;
+  /* margin: .5em; */
   border: none;
   border-radius: 10px;
   cursor: pointer;
   margin-top: 20px;
-  width: 100px;
+  width: 100%;
   font-size: 15px;
 }
 
- #search-container button:hover {
+#search-container button:hover {
   background: rgb(224, 45, 45);
   color: white;
 }
 
 #hourly-forecast {
-  margin-top: 50px;
+  margin-top: 1rem;
   overflow-x: auto;
   white-space: nowrap;
   display: flex;
   justify-content: space-between;
 }
+.hourly-item{
+  width: 95px;
+}
+#info-div .col-6 .boxes{
+  min-height: 275px;
+}
 
 
+#info-div>.row>.col .boxes{
+  text-align: center;
+}
+
+@media only screen and (min-width: 600px) {
+  .main {
+    height: 100vh;
+    /* background-color: olive; */
+  }
+
+  #info-div .col-6 .boxes{
+    min-height: 275px;
+  }
+
+  .boxes img{
+    max-width: 200px;
+
+  }
+
+}
 
 
 /* 
@@ -75,7 +118,7 @@ h2, label, p {
   margin: 8px 0;
 }
  */
- 
+
 /*
 #temp-div p {
   font-size: 60px;

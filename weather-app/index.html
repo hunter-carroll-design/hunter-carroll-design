@@ -5,24 +5,59 @@
 <title>Weather App</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&family=Lexend:wght@100..900&display=swap');
+  </style>
 <link rel="stylesheet" href="./style.css">
 
 <body>
+<div class="main">
+  <div class="container">
+    <h1>Check your weather</h1>
+  </div>
+  <div class="container mb-2" id="search-container">
+    <div class="row w-100">
+    <div class="col col-9 col-md-10">
+      <input type="text" id="city" placeholder="Enter City">
+    </div>
+    <div class="col col-3 col-md-2 px-0">
+      <button onclick="getWeather()">Search</button>
+    </div>
+  </div>
+  </div>
+  <div class="container" id="weather-container">
+    <div class="row ">
+      <div class="col col-12 col-md-3" id="nav-div">
+       
+      </div>
+      <div class="col col-12 col-md-9" id="info-div">
+        <div class="row ">
+          <div class="col col-6">
+            <div id="temp-div"></div>
+          </div>
+          <div class="col col-6">
+            <div id="icon-div"></div>
+          </div>
+          <div class="col col-12">
+            <div id="weather-info"></div>
+          </div>
+          
+        </div>
 
-  <div id="weather-container">
-    <input type="text" id="city" placeholder="Enter City">
-    <button onclick="getWeather()">Search</button>
-
-    <img id="weather-icon" alt="Weather Icon">
-    <div id="temp-div"></div>
-    <div id="weather-info"></div>
-    <div id="hourly-forecast"></div>
+      </div>
+    </div>
+    <div class="row mt-3">
+    <div class="col col-12">
+      <div id="hourly-forecast" class="mt-2"></div>
+    </div>
+  </div>
+    <!-- <img id="weather-icon" alt="Weather Icon"> -->
 
   </div>
+</div>
   <script src="./script.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/js/bootstrap.min.js"></script>
 
 </body>
 
