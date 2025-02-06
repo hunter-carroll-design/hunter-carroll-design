@@ -13,12 +13,27 @@
 .todo-app{
   margin: auto;
 }
+#input-box, #add-button {
+  border: #000 2px solid;
+  border-radius: 100px;
+  
+}
+
 
 ul li:before {
   content: "";
-  display: block;
+  display: inline-block;
+  background-image: url(/_images/unchecked.png);
+
   aspect-ratio: 1/1;
   height: 30px;
   border-radius: 50%;
   border: 1px solid green;
+}
+ul li.complete {
+  color: #555;
+  text-decoration: line-through;
+}
+ul li.complete::before {
+  background-image: url(/_images/checked.png);
 }

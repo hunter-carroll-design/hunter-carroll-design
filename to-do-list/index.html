@@ -8,6 +8,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=check" />
 <title>Title</title>
 </head>
 <body>
@@ -17,14 +18,12 @@
       <div>
       <h1>To-Do List<img style="display: inline;" src="_images/icons8-notepad-50.png"></h2>
     </div>
-      <div class="row">
-        <input type="text" id="input-box" placeholder="Add ">
-        <button>Add</button>
+      <div class="to-do-container row justify-content-between">
+        <input class="col-12 col-md-9" type="text" id="input-box" placeholder="Add">
+        <button id="add-button" class="col-12 col-md-2" onclick="addTask()">Add</button>
       </div>
       <ul id="list-container">
-        <li class="complete">Task 1</li>
-        <li>Task 2</li>
-        <li>Task 3</li>
+        <!-- <li>test<span>×</span></li> -->
 
       </ul>
     </div>
