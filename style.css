@@ -1,0 +1,13 @@
+ li{
+
+  font-family: 'Font Awesome\ 5 Free' !important; 
+  /* content: "\f2d1"; */
+  /* list-style-position: outside;*/
+  list-style-type: square; 
+
+}
+
+#homepage h1, h2, h3, a>p{
+font-family: "Funnel Display";
+text-decoration: none!important;
+}
