@@ -9,7 +9,7 @@ function getWeather() {
     const currentWeatherUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`;
     const forecastUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}`;
 
-    fetch(currentWeatherUrl)
+    fetch(currentWeatherUrl, { mode: 'cors'})
         .then(response => response.json())
         .then(data => {
             displayWeather(data);
@@ -38,7 +38,6 @@ function displayWeather(data) {
     const iconDiv = document.getElementById('icon-div');
     const weatherInfoDiv = document.getElementById('weather-info');
     const hourlyForecastDiv = document.getElementById('hourly-forecast');
-
 
 
     // Clear previous content
