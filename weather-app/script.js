@@ -9,7 +9,7 @@ function getWeather() {
     const currentWeatherUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`;
     const forecastUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}`;
 
-    fetch(currentWeatherUrl, { mode: 'cors'})
+    fetch(currentWeatherUrl)
         .then(response => response.json())
         .then(data => {
             displayWeather(data);
