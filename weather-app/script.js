@@ -1,4 +1,6 @@
-function getWeather() {
+// function getWeather() {
+document.getElementById("searchBtn").addEventListener("click", function() {
+
     const apiKey = '3e093e59335a6b12910d967d5f859827';
     const city = document.getElementById('city').value;
 
@@ -28,7 +30,7 @@ function getWeather() {
             // console.error('Error fetching hourly forecast data', error);
             alert('Error fetching hourly forecast data. Please try again.');
         });
-}
+})
 
 function displayWeather(data) {
     const navigation = document.getElementById('nav-div');
