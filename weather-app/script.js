@@ -15,7 +15,7 @@ function getWeather() {
             displayWeather(data);
         })
         .catch(error => {
-            console.error('Error fetching current weather data', error);
+            // console.error('Error fetching current weather data', error);
             alert('Error fetching current weather data. Please try again.');
         });
 
@@ -25,7 +25,7 @@ function getWeather() {
             displayHourlyForecast(data.list);
         })
         .catch(error => {
-            console.error('Error fetching hourly forecast data', error);
+            // console.error('Error fetching hourly forecast data', error);
             alert('Error fetching hourly forecast data. Please try again.');
         });
 }
